@@ -23,4 +23,4 @@ See Kālacakra calendar software.pdf for extended usage info
 
 Kalachakra.org [page](http://www.kalacakra.org/calendar/kcal.htm) on kcal with links to their downlods, etc. 
 
-Memorium and tribute to [Edward Hennin](https://www.shentongkalacakra.com/2019/12/02/a-memoriam-and-tribute-to-kalacakra-scholar-translator-and-calendar-expert-edward-henning-1946-2016/)
+Memorium and tribute to [Edward Henning](https://www.shentongkalacakra.com/2019/12/02/a-memoriam-and-tribute-to-kalacakra-scholar-translator-and-calendar-expert-edward-henning-1946-2016/)

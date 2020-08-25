@@ -1,0 +1,25 @@
+WC=wcl386
+CC=gcc
+CFLAGS=-I.
+
+kcal: k1.o eclipse.o sunmon.o jd.o bcd.o
+	$(CC) -o kcal.exe k1.o eclipse.o sumon.o jd.o bcd.o
+
+k1.obj: k1.c
+	$(wc) $(flags) k1.c
+
+eclipse.obj: eclipse.c
+	$(wc) $(flags) eclipse.c
+
+sunmon.obj: sunmon.c
+	$(wc) $(flags) sunmon.c
+
+jd.obj: jd.c jd.h bcd.h
+	$(wc) $(flags) jd.c
+
+bcd.obj: bcd.c bcd.h
+	$(wc) $(flags) bcd.c
+
+clean:
+	rm kcal *.o
+

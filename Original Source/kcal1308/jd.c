@@ -23,7 +23,8 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ************************************************************************************/
 
 #include <math.h>
-#include <conio.h>
+/* #include <conio.h> */
+#include <curses.h>
 #include <stdio.h>
 #include <time.h>
 #include "jd.h"

@@ -26,9 +26,10 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+/* #include <conio.h> */
+#include <curses.h>
 #include <string.h>
-#include <dos.h>
+/* #include <dos.h> */
 #include <math.h>
 #include "jd.h"
 #include "kcal.def"

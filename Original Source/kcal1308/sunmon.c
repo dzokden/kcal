@@ -23,7 +23,7 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include <ctype.h>
 #include <fcntl.h>
-#include <dos.h>
+/* #include <dos.h> */
 #include <math.h>
 #include "earthc.dat"
 #include "earthd.dat"

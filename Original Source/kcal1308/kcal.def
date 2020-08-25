@@ -1,0 +1,162 @@
+/*********************************************************************************
+Licence for Kcal - Kalacakra calendar software
+
+Copyright (c) 2011-2013 Edward Henning
+
+Permission is hereby granted, free of charge, to any person  obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so, subject
+to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies
+or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+************************************************************************************/
+
+char *dayoweek[7] = { "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri" };
+char *wdayelem[7] = { "Earth", "Fire", "Water", "Fire", "Water", "Wind", "Earth" };
+
+char *lunmanP[27];
+char *lunmanT[27] = { "tha skar", "bra nye", "smin drug", "snar ma", "mgo",
+                    "lag", "nabs so", "rgyal", "skag", "mchu", "gre", "dbo",
+                    "me bzhi", "nag pa", "sa ri", "sa ga", "lha mtshams",
+                    "snron", "snrubs", "chu stod", "chu smad", "gro zhin",
+                    "mon gre", "mon gru", "khrums stod", "khrums smad",
+                    "nam gru" };
+
+char *lmanelem[27] = { "Wind", "Fire", "Fire", "Earth", "Wind", "Water",
+            "Wind", "Fire", "Water", "Fire", "Fire", "Wind", "Wind", "Wind",
+            "Wind", "Wind", "Earth", "Earth", "Water", "Water", "Earth",
+            "Earth", "Water", "Earth", "Fire", "Water", "Water" };
+
+char *lunmanS[27] = { "Ashvini", "Bharani", "Krittika", "Rohini",
+                      "Mrigashiras", "Ardra", "Punarvasu", "Pushya",
+                      "Ashlesha", "Magha", "Purvaphalguni", "Uttaraphalguni",
+                      "Hasta", "Citra", "Svati", "Vishakha", "Anuradha",
+                      "Jyeshtha", "Mula", "Purvashadha", "Uttarashadha",
+                      "Shravana", "Dhanishta", "Shatabhishaj",
+                      "Purvabhadrapada", "Uttarabhadrapada", "Revati" };
+
+char *yogaP[27];
+char *yogaT[27] = { "'khon 'dzin", "rnam sel", "mdza' bo", "tshe dang ldan pa", "skal bzang",
+                  "dge byed", "shin tu 'grams", "las bzang", "'dzin byed",
+                  "zug rngu", "'grams", "'phel", "brtan pa", "yongs bsnun",
+                  "dga' ba", "rdo rje", "dngos grub", "phan tshun",
+                  "mchog can", "yongs 'joms", "zhi ba", "grub pa",
+                  "bsgrub bya", "dge ba", "dkar po", "tshangs pa",
+                  "dbang po" }; 
+
+char *yogaS[27] = { "Vaidhriti", "Vishkambha", "Priti", "Ayushmat", "Saubhagya",
+                    "Shobhana", "Atiganda", "Sukarma", "Dhriti", "Shula",
+                    "Ganda", "Vriddhi", "Dhruva", "Vyaghata", "Harshana",
+                    "Vajra", "Siddhi", "Vyatipata", "Variyas", "Parigha",
+                    "Shiva", "Siddha", "Sadhya", "Shubha", "Shukla",
+                    "Brahman", "Indra" };
+
+char *byedP[11];
+char *byedT[11] = { "gdab pa", "byis pa", "rigs can", "til rdung",
+                  "khyim skyes", "tshong ba", "vishti", "mi sdug pa",
+                  "bkra shis", "rkang bzhi", "klu" };
+
+char *byedS[11] = { "Vava", "Valava", "Kaulava", "Taitila", "Garaja", "Vanija",
+                    "Vishti", "Kintughna", "Shakuni", "Catushpada", "Naga" };
+
+char *cycanim[12] = { "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey",
+                      "Bird", "Dog", "Pig", "Mouse", "Ox", "Tiger" };
+
+char *cycelem[10] = { "Wood", "Fire", "Fire", "Earth", "Earth", "Iron",
+                      "Iron", "Water", "Water", "Wood" };
+
+char *cycelem1[5] = { "Fire", "Earth", "Iron", "Water", "Wood" };
+
+char *cycgendE[2] = { "male", "female" };
+
+//char *cycpar[8] = { "Zon", "Li", "Khon", "Dwa", "Khen", "Kham", "Gin", "Zin" };
+//char *cycparT[8] = { "Zon", "Li", "Khon", "Dwa", "Khen", "Kham", "Gin", "Zin" };
+//char *cycparE[8] = { "Gentle", "Clinging", "Receptive", "Joyous", "Creative",
+//                     "Abysmal", "Keeping Still", "Arousing" };
+
+char *wmonths[12] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
+                      "Sep", "Oct", "Nov", "Dec" };
+
+char *ZsignsE[12] = { "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+                     "Libra", "Scorpio", "Sagittarius", "Capricorn",
+                     "Aquarius", "Pisces" };
+
+char *ZsignsT[12] = { "lug", "glang", "'khrig pa", "karka ta", "seng ge", "bu mo",
+                     "srang", "sdig pa", "gzhu", "chu srin",
+                     "bum pa", "nya" };
+
+char *MnthS[12] = { "Caitra", "Vaishakha", "Jyeshta", "Ashadha",
+                    "Shravana", "Bhadrapada", "Ashvina", "Kartikka",
+                    "Margashirsha", "Pausha", "Magha", "Phalguna" };
+
+char *MnthT[12] = { "nag pa", "sa ga", "snron", "chu stod",
+                    "gro bzhin", "khrums", "tha skar", "smin drug",
+                    "mgo", "rgyal", "mchu", "dbo" };
+
+char *M_seasonE[12] = { "Mid-Spring", "Late-Spring", "Early-Summer",
+                       "Mid-Summer", "Late-Summer", "Early-Autumn",
+                       "Mid-Autumn", "Late-Autumn", "Early-Winter",
+                       "Mid-Winter", "Late-Winter", "Early-Spring" };
+
+char *M_seasonT[12] = { "dpyid 'bring", "dpyid tha", "dbyar ra",
+                       "dbyar 'bring", "dbyar tha", "ston ra",
+                       "ston 'bring", "ston tha", "dgun ra",
+                       "dgun 'bring", "dgun tha", "dpyid ra" };
+
+char *Clunman[28] = { "Jiao", "Kang", "Di", "Fang", "Xin", "Wei", "Ji", "Dou",
+                    "Niu", "Nu", "Xu", "Wei", "Shi", "Bi", "Kui", "Lou",
+                    "Wei", "Mao", "Bi", "Zui", "Can", "Jing", "Gui", "Liu",
+                    "Xing", "Zhang", "Yi", "Zhen" };
+
+char *tenbrelT[12] = { "ma rig", "'du byed", "rnam shes", "ming gzugs", "skye mched", "reg pa", 
+                     "tshor ba", "sred pa", "len pa", "srid pa", "skye ba", "rga shi" };
+
+char *tenbrelE[12] = { "Misperception", "Response", "Consciousness", "Name & form", "Senses", "Contact", 
+                     "Sensation", "Attachment", "Grasping", "Involvement", "Birth", "Old age & death" };
+
+char *PrabhavaS[60] = { "Prabhava", "Vibhava", "Shukla", "Pramoda", "Prajapti",
+                       "Anggiras", "Shrimukha", "Bhava", "Yuvika", "Dhritu",
+                       "Ishvara", "Vahudhvanya", "Pramadi", "Vikrama",
+                       "Brishabha", "Citra", "Bhanu", "Bhanutara", "Virthapa",
+                       "Akshaya", "Sarvajit", "Sarvadhari", "Virodhi",
+                       "Vikrita", "Khara", "Nanda", "Vijaya", "Jaya", "Mada",
+                       "Durmukha", "Hemalambha", "Vilambhi", "Vikari",
+                       "Sarvavati", "Slava", "Shubhakrita", "Shobhana",
+                       "Krodhi", "Vishvabandhu", "Parabhava", "Pravamga",
+                       "Kilaka", "Saumya", "Sadharana", "Virobhakrita",
+                       "Paradhari", "Pramadi", "Ananda", "Rakshasa", "Anala",
+                       "Vinggala", "Kaladuti", "Siddhartha", "Rudra",
+                       "Durmati", "Dundubhi", "Rudhirura", "Raktakshi",
+                       "Krodhana", "Kshayaka" };
+
+char *PrabhavaT[60] = { "rab byung", "rnam byung", "dkar po", "rab myos", "skyes bdag", 
+                        "aGgi ra", "dpal gdong", "dngos po", "na tshod ldan",
+                        "'dzin byed", "dbang phyug", "'bru mang po", "myos ldan",    
+                        "rnam gnon", "khyu mchog", "sna tshogs", "nyi ma",     
+                        "nyi sgrol byed", "sa skyong", "mi zad", "thams cad 'dul",
+                        "kun 'dzin", "'gal ba", "rnam 'gyur", "bong bu", "dga' ba",    
+                        "rnam rgyal", "rgyal ba", "myos byed", "gdong ngan", 
+                        "gser 'phyang", "rnam 'phyang", "sgyur byed", "kun ldan",     
+                        "'phar ba", "dge byed", "mdzes byed", "khro mo",      
+                        "sna tshogs dbyig", "zil gnon", "spre'u", "phur bu", 
+                        "zhi ba", "thun mong", "'gal byed", "yongs 'dzin", "bag med",     
+                        "kun dga'", "srin bu", "me", "dmar ser can", "dus kyi pho nya", 
+                        "don grub", "drag po", "blo ngan", "rnga chen", "khrag skyug", 
+                        "mig dmar", "khro bo", "zad pa" };
+
+char *phrodE[28] = { "joy", "time-club", "control", "humanity", "youth",
+               "raven", "victory-banner", "eternal-knot", "vajra",
+               "attainment", "parasol", "friend", "intellect", "desire",
+               "firebrand", "emaciation", "death-lord", "arrow", "success",
+               "lance", "nectar", "pestle", "elephant", "tigress",
+               "exhaustion", "movement", "stability", "increase" };

@@ -23,7 +23,8 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include <stdio.h>
 #include <ctype.h>
-#include <conio.h>
+/* #include <conio.h> */
+#include <curses.h>
 #include <math.h>
 #include "bcd.h"
 

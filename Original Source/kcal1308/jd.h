@@ -23,10 +23,6 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include <time.h>
 
-void jul_chk ( void );
-int gregd2jul ( int, int, int );
-void jul2date ( int, struct tmst * );
-
 struct tmst
   {
     int yy;
@@ -37,3 +33,8 @@ struct tmst
     int sc;
     int dow;
   };
+
+void jul_chk ( void );
+int gregd2jul ( int, int, int );
+void jul2date ( int, struct tmst * );
+

@@ -18,3 +18,9 @@ See Kālacakra calendar software.pdf for extended usage info
   # Creates detailed calender in sfous00.txt with location specific data
   # kcal $outfile $location,_info $year $long
 ```
+
+## Resources and Information 
+
+Kalachakra.org [page](http://www.kalacakra.org/calendar/kcal.htm) on kcal with links to their downlods, etc. 
+
+Memorium and tribute to [Edward Hennin](https://www.shentongkalacakra.com/2019/12/02/a-memoriam-and-tribute-to-kalacakra-scholar-translator-and-calendar-expert-edward-henning-1946-2016/)
